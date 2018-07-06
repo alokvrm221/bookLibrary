@@ -1,0 +1,84 @@
+<div class="example-container">
+<mat-card class="example-card">
+   <mat-card-header class="head">
+     <mat-card-title>Register Here </mat-card-title>
+   </mat-card-header>
+   <mat-card-content>
+     <form class="example-form" (submit)="addSignup()">
+       <table class="example-full-width" cellspacing="0">
+         <tr>
+            <td>
+             <mat-form-field class="example-full-width">
+             <input matInput placeholder="Full Name " [(ngModel)]="userData.fullName" name="fullname" required>
+             </mat-form-field>
+           </td>
+         </tr>
+         <tr>
+            <td>
+             <mat-form-field class="example-full-width">
+             <input matInput type="text" placeholder="Username" [(ngModel)]="userData.userName" name="username" text pattern="^[a-z0-9_-]{4,8}$" required>
+             </mat-form-field>
+           </td>
+         </tr>
+         <tr>
+             <td>
+              <mat-form-field class="example-full-width">
+                <input matInput   type="email" [(ngModel)]="userData.email" name="email"   placeholder="Email Id " email=ngModel email pattern="^[a-zA-Z0-9_.+]+@(hotmail|gmail|yahoo)\.(com)$"required>
+               </mat-form-field>
+            </td>
+          </tr>
+
+         <tr>
+         <td>
+           <mat-form-field class="example-full-width">
+           <input matInput placeholder="Password" [(ngModel)]="userData.password"type="password"  password="ngModel"
+           name="password"  maxlength="15" required>
+
+         </mat-form-field></td>
+       </tr>
+       <tr>
+       <td>
+         <mat-form-field class="example-full-width">
+        <input matInput placeholder=" Confirm Password" (blur)="checkPassword()" [(ngModel)]="userData.confirmpassword"
+        type="password" name="confirmpassword" required>
+        <!-- <mat-error *ngIf="this.password!== this.confirmpassord">Wrong password</mat-error> -->
+       </mat-form-field></td>
+     </tr>
+
+       <tr>
+          <td>
+           <mat-form-field class="example-full-width">
+             <span matPrefix>+91 &nbsp;</span>
+             <input  matInput [(ngModel)]="userData.phoneNo" name="phoneNo" phoneNo=ngModel minlength="10"  maxlength="10" placeholder="Phone No">
+            </mat-form-field>
+         </td>
+       </tr>
+       <tr>
+          <td>
+           <mat-form-field class="example-full-width">
+             <textarea matInput  [(ngModel)]="userData.address"  name="address" placeholder="Address"></textarea>
+            </mat-form-field>
+         </td>
+       </tr>
+       <tr>
+
+            <td>
+             <mat-form-field class="example-full-width">
+                 <input matInput  [(ngModel)]="userData.postalCode"  name="postalCode"   postalCode=ngModel minlength="6"  maxlength="6" placeholder="Postal Code" required>
+
+              </mat-form-field>
+           </td>
+         </tr>
+
+
+
+     </table>
+     </form>
+
+     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+   </mat-card-content>
+   <mat-card-actions>
+     <button mat-raised-button (click)="addSignup()" color="primary">Register</button>
+   </mat-card-actions>
+ </mat-card>
+</div>

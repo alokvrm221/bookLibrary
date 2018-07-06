@@ -1,0 +1,17 @@
+
+.example-full-width{
+  width:100%;
+}
+.example-form{
+  min-width: 150px;
+  max-width:400px;
+  width:100%;
+}
+.example-container{
+  margin-left: 33%;
+}
+.head{
+  text-decoration:underline;
+  font-family:cursive;
+ margin-left: 160px;
+}
